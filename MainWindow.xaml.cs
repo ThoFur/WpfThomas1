@@ -1,4 +1,5 @@
 ﻿using Microsoft.Windows.Themes;
+using System.Media;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -9,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+
 
 namespace WpfThomas1
 {
@@ -41,6 +43,9 @@ namespace WpfThomas1
             {
                 myImage.Visibility = Visibility.Visible;
                 myTextBox.Visibility = Visibility.Visible;
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer.Open(new Uri("Sounds/ahahah.mp3", UriKind.RelativeOrAbsolute));
+                mediaPlayer.Play();
             }
             else
             {
@@ -63,6 +68,9 @@ namespace WpfThomas1
                 safeTextBlock.Padding = new Thickness(120, 120, 120, 120);  
                 safeTextBlock.Background = new SolidColorBrush(Colors.LightGreen);
                 myButton.Visibility = Visibility.Collapsed;
+                MediaPlayer mediaPlayer = new MediaPlayer();
+                mediaPlayer.Open(new Uri("Sounds/congratulations.mp3", UriKind.RelativeOrAbsolute));
+                mediaPlayer.Play();
             }
         }
     }
