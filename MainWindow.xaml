@@ -73,6 +73,7 @@
         <Image x:Name="myImage" Source="/ahahNedry.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Visibility="Collapsed" Panel.ZIndex="0"/>
         <TextBox x:Name="myTextBox" Width="200" Height="40" Visibility="Hidden" TextChanged="MyTextBox_TextChanged" FontSize="26"/>
         <TextBlock x:Name="safeTextBlock" Text="SAFE" FontSize="45" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+        <TextBlock x:Name="tipsTextBlock" Text="" FontSize="45" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="Collapsed"/>
     </Grid>
 
 </Window>

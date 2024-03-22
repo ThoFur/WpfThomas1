@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace WpfThomas1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         int clicks = 0;
@@ -33,6 +30,8 @@ namespace WpfThomas1
             buttonText = clicks < 8 ? new List<string> { "Almost", "Ah-Ah-Ah", "Try Again" } : new List<string> { "Almost", "magic word?", "Ah-Ah-Ah" };
             Random random = new Random();
 
+            
+
             double maxLeftMargin = this.Width - myButton.Width;
             double maxTopMargin = this.Height - myButton.Height;
 
@@ -43,6 +42,7 @@ namespace WpfThomas1
             {
                 myImage.Visibility = Visibility.Visible;
                 myTextBox.Visibility = Visibility.Visible;
+                
                 MediaPlayer mediaPlayer = new MediaPlayer();
                 mediaPlayer.Open(new Uri("Sounds/ahahah.mp3", UriKind.RelativeOrAbsolute));
                 mediaPlayer.Play();
@@ -52,13 +52,28 @@ namespace WpfThomas1
                 myImage.Visibility = Visibility.Collapsed;
                 myTextBox.Visibility = Visibility.Collapsed;
             }
-
+            if(clicks > 10)
+            {
+                tipsTextBlock.Visibility = Visibility.Visible;
+                tipsTextBlock.Text = "the magic word starts with a 'd'...";
+            }
+            if (clicks > 15)
+            {
+                tipsTextBlock.Visibility = Visibility.Visible;
+                tipsTextBlock.Text = "In Jurassic Park, you can see a ...";
+            }
+            if (clicks > 20)
+            {
+                tipsTextBlock.Visibility = Visibility.Visible;
+                tipsTextBlock.Text = "Dinosaurus, hoe schrijf je da in 't Engels?";
+            }
         }
 
         private void MyTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (myTextBox.Text == "dinosaur")
             {
+                tipsTextBlock.Visibility = Visibility.Collapsed;
                 myImage.Visibility = Visibility.Collapsed;
                 myTextBox.Visibility = Visibility.Collapsed;
                 safeTextBlock.Visibility = Visibility.Visible;
