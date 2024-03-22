@@ -10,11 +10,15 @@
 
   <ItemGroup>
     <None Remove="ahahNedry.png" />
+    <None Remove="Images\Claws.jpg" />
     <None Remove="Sounds\ahahah.mp3" />
     <None Remove="Sounds\congratulations.mp3" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\Claws.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\ahahah.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
